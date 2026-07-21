@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-78P9ZHBSBC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-78P9ZHBSBC');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Atendimento multidisciplinar em Itu nas áreas de Psiquiatria, Ginecologia, Dermatologia, Neuropsicologia e Psicologia. Consulte horários e agende pelo WhatsApp.">
-  <meta name="keywords" content="Clínica multidisciplinar em Itu, Psiquiatra em Itu, Ginecologista em Itu, Dermatologista em Itu, Psicólogo em Itu, Neuropsicologia em Itu, Clínica particular em Itu, Clínica que atende convênio em Itu">
+  <meta name="description" content="Atendimento multidisciplinar em Itu nas áreas de Psiquiatria, Ginecologia, Dermatologia, Neuropsicologia, Psicologia, Nutrição e Clínica Geral. Consulte horários e agende pelo WhatsApp.">
+  <meta name="keywords" content="Clínica multidisciplinar em Itu, Psiquiatra em Itu, Ginecologista em Itu, Dermatologista em Itu, Psicólogo em Itu, Neuropsicologia em Itu, Nutricionista em Itu, Clínica particular em Itu, Clínica que atende convênio em Itu">
   <meta name="author" content="Vivamente Clínica">
-  
+
   <title>Vivamente | Clínica Multidisciplinar em Itu</title>
-  
-  <!-- Favicon -->
+
   <link rel="icon" type="image/png" href="assets/img/logo.png">
-  
-  <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="assets/css/styles.css">
-  
-  <!-- Google Tag Manager (Inserir ID da conta nas tags reais) -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');
-  </script>
-  <!-- End Google Tag Manager -->
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <!-- HEADER -->
+<!-- HEADER -->
   <header class="header">
     <div class="container">
       <a href="#home" class="header-logo">
@@ -180,7 +172,7 @@
         
         <!-- Imagery composition -->
         <div class="about-image-wrapper">
-          <img src="assets\img\quem-somos-banner.webp" alt="Ambiente acolhedor e atendimento integrado Vivamente" class="about-image">
+          <img src="assets/img/quem-somos-banner.webp" alt="Ambiente acolhedor e atendimento integrado Vivamente" class="about-image">
         </div>
         
       </div>
@@ -673,5 +665,20 @@
 
   <!-- JavaScript Application -->
   <script src="assets/js/app.js"></script>
+
+  <!-- Rastreamento de cliques no WhatsApp -->
+  <script>
+    document.querySelectorAll('.track-whatsapp').forEach(function (botao) {
+      botao.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'click_whatsapp_agendamento', {
+            especialidade: botao.dataset.specialty || 'Geral',
+            link_url: botao.href
+          });
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
