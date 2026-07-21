@@ -439,11 +439,13 @@ h2 {
 
 .trust-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   font-size: 0.925rem;
   color: var(--color-text-dark);
   font-weight: 500;
+  text-align: left;
+  line-height: 1.35;
 }
 
 .trust-item svg {
@@ -451,6 +453,7 @@ h2 {
   width: 18px;
   height: 18px;
   color: var(--color-rose);
+  margin-top: 2px;
 }
 
 /* Map Card */
@@ -754,19 +757,40 @@ h2 {
 /* --- ESPECIALIDADES --- */
 .specs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 30px;
+}
+
+.spec-card {
+  grid-column: span 2;
+}
+
+.spec-card:nth-child(7) {
+  grid-column: 3 / span 2;
 }
 
 @media (max-width: 992px) {
   .specs-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .spec-card {
+    grid-column: auto;
+  }
+  .spec-card:nth-child(7) {
+    grid-column: 1 / span 2;
+    max-width: calc(50% - 15px);
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 768px) {
   .specs-grid {
     grid-template-columns: 1fr;
+  }
+  .spec-card:nth-child(7) {
+    grid-column: auto;
+    max-width: 100%;
+    margin: 0;
   }
 }
 
@@ -877,10 +901,59 @@ h2 {
   display: block;
 }
 
+.partner-card {
+  cursor: pointer;
+}
+
 .partner-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   border-color: var(--color-rose);
+}
+
+.partner-card.active {
+  border-color: var(--color-terracotta);
+  box-shadow: 0 0 0 2px var(--color-rose);
+  transform: translateY(-4px);
+}
+
+.convenio-legend-box {
+  margin: 30px auto 20px auto;
+  padding: 24px;
+  background-color: var(--color-light-beige);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-terracotta);
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  text-align: left;
+  max-width: 600px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
+}
+
+.legend-placeholder {
+  color: var(--color-text-light);
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.legend-active-content strong {
+  color: var(--color-dark-blue);
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.legend-active-content span {
+  color: var(--color-text-dark);
 }
 
 .partners-notice {
@@ -1521,5 +1594,66 @@ h2 {
   }
   .whatsapp-tooltip {
     display: none; /* Hide tooltip on small mobile screens to prevent overlaying text */
+  }
+
+  /* Otimização da Hero para Celulares */
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+  .hero-content h1 {
+    font-size: 1.85rem;
+  }
+  .hero-trust-elements {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .hero-map-card {
+    padding: 16px;
+    margin-bottom: 10px;
+  }
+  .map-container {
+    height: 200px;
+  }
+
+  /* Otimização dos Convênios para Celulares */
+  .partners-grid {
+    gap: 12px;
+    width: 100%;
+  }
+  .partner-card {
+    min-width: calc(50% - 6px);
+    height: 70px;
+    padding: 10px;
+  }
+  .partner-card.particular {
+    min-width: 100%;
+  }
+  .partner-card img {
+    max-height: 38px;
+  }
+  .convenio-legend-box {
+    margin-top: 20px;
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Otimização de Botões de Localização para Celulares */
+  .loc-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .loc-cta-buttons .btn {
+    width: 100%;
+    margin: 0;
+  }
+  .loc-map-wrapper {
+    padding: 10px;
+  }
+  .loc-map-wrapper .map-container {
+    height: 260px;
   }
 }

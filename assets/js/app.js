@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTrackingEvents();
   initFloatingWhatsAppTooltip();
   initActiveNavOnScroll();
+  initConvenioLegend();
 });
 
 /**
@@ -176,6 +177,43 @@ function initActiveNavOnScroll() {
       if (link.getAttribute('href') === `#${currentSectionId}`) {
         link.classList.add('active');
       }
+    });
+  });
+}
+
+/**
+ * 7. Legenda Dinâmica para Convênios de Saúde
+ */
+function initConvenioLegend() {
+  const cards = document.querySelectorAll('.partner-card[data-convenio]');
+  const legendBox = document.getElementById('convenio-legend');
+  if (!legendBox || cards.length === 0) return;
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Remove active class from all cards
+      cards.forEach(c => c.classList.remove('active'));
+      
+      // Add active class to clicked card
+      card.classList.add('active');
+
+      const name = card.getAttribute('data-convenio');
+      const desc = card.getAttribute('data-cobertura');
+
+      // Smooth fade transition
+      legendBox.style.opacity = '0';
+      legendBox.style.transform = 'translateY(4px)';
+      
+      setTimeout(() => {
+        legendBox.innerHTML = `
+          <div class="legend-active-content">
+            <strong>Cobertura ${name}:</strong>
+            <span>${desc}</span>
+          </div>
+        `;
+        legendBox.style.opacity = '1';
+        legendBox.style.transform = 'translateY(0)';
+      }, 150);
     });
   });
 }

@@ -384,6 +384,23 @@
     Agendar consulta
   </a>
 </div>
+
+        <!-- Clínico Geral -->
+        <div class="spec-card">
+          <div class="spec-icon-wrapper">
+            <!-- Heart Pulse / General Care Icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <h3>Clínico Geral</h3>
+          <p>Atendimento médico inicial, preventivo e integrativo, auxiliando no diagnóstico e direcionamento para cuidados especializados.</p>
+          <a href="https://wa.me/5511974329120?text=Olá!%20Encontrei%20a%20Vivamente%20pelo%20site%20e%20gostaria%20de%20obter%20informações%20para%20agendar%20uma%20consulta%20de%20Clínico%20Geral." 
+             class="btn btn-outline track-whatsapp" 
+             data-specialty="Clínico Geral">
+            Agendar consulta
+          </a>
+        </div>
         
       </div>
     </div>
@@ -402,11 +419,16 @@
         
         <!-- Logos Container -->
         <div class="partners-grid">
-          <div class="partner-card particular">Particular</div>
-          <div class="partner-card"><img src="assets/img/unimed-logo.png" alt="Unimed Salto/Itu"></div>
-          <div class="partner-card"><img src="assets/img/doctor-logo.png" alt="Doctor Prime"></div>
-          <div class="partner-card"><img src="assets/img/phs-logo.png" alt="PHS Samaritano Saúde"></div>
-          <div class="partner-card"><img src="assets/img/sulamerica-logo.png" alt="SulAmérica"></div>
+          <div class="partner-card particular" data-convenio="Particular" data-cobertura="Atendimento particular para todas as especialidades e profissionais da clínica (Psiquiatria, Ginecologia, Dermatologia, Neuropsicologia, Psicologia, Nutrição e Clínico Geral).">Particular</div>
+          <div class="partner-card" data-convenio="Unimed" data-cobertura="Somente Psiquiatria (Carteira nacional ou Unimed Salto/Itu)."><img src="assets/img/unimed-logo.png" alt="Unimed Salto/Itu"></div>
+          <div class="partner-card" data-convenio="Doctor Prime" data-cobertura="Psiquiatria, Psicologia, Neuropsicologia, Ginecologia, Dermatologia e Clínico Geral."><img src="assets/img/doctor-logo.png" alt="Doctor Prime"></div>
+          <div class="partner-card" data-convenio="PHS" data-cobertura="Psiquiatria, Dermatologia e Clínico Geral."><img src="assets/img/phs-logo.png" alt="PHS Samaritano Saúde"></div>
+          <div class="partner-card" data-convenio="SulAmérica" data-cobertura="Psiquiatria e Dermatologia."><img src="assets/img/sulamerica-logo.png" alt="SulAmérica"></div>
+        </div>
+
+        <!-- Caixa de Legenda de Cobertura do Convênio -->
+        <div id="convenio-legend" class="convenio-legend-box">
+          <p class="legend-placeholder">Clique em um convênio acima para ver quais especialidades são atendidas pelo seu plano.</p>
         </div>
         
         <p class="partners-notice">
